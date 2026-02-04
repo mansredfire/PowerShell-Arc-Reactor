@@ -7,22 +7,23 @@
                               ║                                                                   ║
                               ╚═══════════════════════════════════════════════════════════════════╝
 
-📋 Table of Contents
+## 📋 Table of Contents
+- [Overview](#overview)
+- [System Requirements](#system-requirements)
+- [Pre-Installation Checklist](#pre-installation-checklist)
+- [Installation Instructions](#installation-instructions)
+- [What Gets Installed](#what-gets-installed)
+- [Installation Locations](#installation-locations)
+- [Post-Installation Steps](#post-installation-steps)
+- [Tool Usage Examples](#tool-usage-examples)
+- [Troubleshooting](#troubleshooting)
+- [Complete Tool List](#complete-tool-list)
+- [Updating Tools](#updating-tools)
+- [Uninstallation](#uninstallation)
+- [Security Considerations](#security-considerations)
+- [FAQ](#faq)
 
-Overview
-System Requirements
-Pre-Installation Checklist
-Installation Instructions
-What Gets Installed
-Installation Locations
-Post-Installation Steps
-Tool Usage Examples
-Troubleshooting
-Complete Tool List
-Updating Tools
-Uninstallation
-Security Considerations
-FAQ
+---
 
 </div>
 
