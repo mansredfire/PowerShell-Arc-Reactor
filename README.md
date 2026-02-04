@@ -1,4 +1,11 @@
-
+                              ╔═══════════════════════════════════════════════════════════════════╗
+                              ║                                                                   ║
+                              ║                     ⚡ WINDOWS ARC REACTOR ⚡                    ║
+                              ║       Modern Tools to Complement Your Windows Distribution        ║
+                              ║                                                                   ║
+                              ║          Automated Installation of 50+ Security Tools             ║
+                              ║                                                                   ║
+                              ╚═══════════════════════════════════════════════════════════════════╝
 **One script to rule them all** - Automated installation of essential security and bug bounty tools for Windows.
 
 [Installation](#-installation-instructions) • [Tools](#-complete-tool-list) • [Usage](#-tool-usage-examples) • [Troubleshooting](#-troubleshooting)
