@@ -2,6 +2,7 @@
 
 ## 📋 Table of Contents
 - [Overview](#overview)
+- [Complete Tool List](#complete-tool-list)
 - [System Requirements](#system-requirements)
 - [Pre-Installation Checklist](#pre-installation-checklist)
 - [Installation Instructions](#installation-instructions)
@@ -10,7 +11,6 @@
 - [Post-Installation Steps](#post-installation-steps)
 - [Tool Usage Examples](#tool-usage-examples)
 - [Troubleshooting](#troubleshooting)
-- [Complete Tool List](#complete-tool-list)
 - [Updating Tools](#updating-tools)
 - [Uninstallation](#uninstallation)
 - [Security Considerations](#security-considerations)
@@ -33,7 +33,185 @@ Automated PowerShell script that installs 60+ Windows-native security tools for 
 - ✅ **Comprehensive Logging**: Track installation progress and errors
 
 ---
+---
 
+## 📚 Complete Tool List
+
+### Windows-Specific Tools (6 tools)
+
+| Tool | Description | Usage | Location |
+|------|-------------|-------|----------|
+| **Sysinternals Suite** | 70+ Windows system utilities | `procmon.exe`, `procexp.exe`, `autoruns.exe` | `C:\ProgramData\chocolatey\lib\sysinternals\tools\` |
+| **Process Hacker** | Advanced process monitoring tool | `ProcessHacker.exe` | `C:\Program Files\Process Hacker 2\` |
+| **x64dbg** | Open-source x64/x32 debugger | `x64dbg.exe` | `C:\Program Files\x64dbg\` |
+| **dnSpy** | .NET debugger and assembly editor | `dnSpy.exe` | `%USERPROFILE%\security-tools\dnspy\` |
+| **ILSpy** | .NET decompiler | `ILSpy.exe` | `C:\Program Files\ILSpy\` |
+| **Detect It Easy** | PE file analyzer and detector | `die.exe` | `%USERPROFILE%\security-tools\detect-it-easy\` |
+
+---
+
+### Go Security Tools (24 tools)
+
+#### ProjectDiscovery Suite (8 tools)
+| Tool | Description | Usage Example |
+|------|-------------|---------------|
+| **nuclei** | Vulnerability scanner based on templates | `nuclei -u https://example.com` |
+| **subfinder** | Subdomain discovery tool | `subfinder -d example.com` |
+| **httpx** | HTTP toolkit for probing | `cat domains.txt \| httpx` |
+| **katana** | Next-generation web crawler | `katana -u https://example.com` |
+| **naabu** | Fast port scanner | `naabu -host example.com` |
+| **dnsx** | DNS toolkit | `dnsx -l domains.txt` |
+| **interactsh** | OOB interaction tool | `interactsh-client` |
+| **notify** | Multi-channel notification system | `nuclei ... \| notify` |
+
+#### Fuzzing Tools (2 tools)
+| Tool | Description | Usage Example |
+|------|-------------|---------------|
+| **ffuf** | Fast web fuzzer | `ffuf -u https://example.com/FUZZ -w wordlist.txt` |
+| **gobuster** | Directory/DNS/vhost brute-forcer | `gobuster dir -u https://example.com -w wordlist.txt` |
+
+#### Discovery Tools (6 tools)
+| Tool | Description | Usage Example |
+|------|-------------|---------------|
+| **amass** | In-depth subdomain enumeration | `amass enum -d example.com` |
+| **assetfinder** | Find domains and subdomains | `assetfinder example.com` |
+| **gau** | Fetch known URLs from multiple sources | `echo example.com \| gau` |
+| **waybackurls** | Fetch URLs from Wayback Machine | `echo example.com \| waybackurls` |
+| **hakrawler** | Simple, fast web crawler | `echo https://example.com \| hakrawler` |
+| **gospider** | Fast web spider | `gospider -s https://example.com` |
+
+#### Utility Tools (4 tools)
+| Tool | Description | Usage Example |
+|------|-------------|---------------|
+| **gf** | Wrapper for grep with security patterns | `cat urls.txt \| gf xss` |
+| **anew** | Add new lines to files (deduplicate) | `cat new.txt \| anew old.txt` |
+| **unfurl** | Pull out bits of URLs | `cat urls.txt \| unfurl domains` |
+| **qsreplace** | Replace query string values | `cat urls.txt \| qsreplace FUZZ` |
+
+#### Security Tools (4 tools)
+| Tool | Description | Usage Example |
+|------|-------------|---------------|
+| **dalfox** | XSS scanner and parameter analyzer | `dalfox url https://example.com?q=test` |
+| **kxss** | Find Reflected XSS parameters | `cat urls.txt \| kxss` |
+| **crlfuzz** | CRLF injection scanner | `crlfuzz -l urls.txt` |
+| **gitleaks** | Scan for secrets in git repos | `gitleaks detect --source .` |
+| **trufflehog** | Find credentials in code | `trufflehog git https://github.com/user/repo` |
+
+---
+
+### Python Security Tools (19 tools)
+
+#### Windows/AD Pentesting (8 tools)
+| Tool | Description | Usage Example |
+|------|-------------|---------------|
+| **impacket** | Collection of Python classes for network protocols | `python -m impacket.psexec` |
+| **crackmapexec** | Swiss army knife for Windows/AD pentesting | `crackmapexec smb 192.168.1.0/24` |
+| **bloodhound** | AD attack path analysis | `bloodhound.py -u user -p pass -d domain.com` |
+| **mitm6** | IPv6 MITM attack tool | `mitm6 -d domain.com` |
+| **responder** | LLMNR/NBT-NS/MDNS poisoner | `responder -I eth0` |
+| **pywerview** | PowerView Python implementation | `pywerview -u user -p pass` |
+| **ldapdomaindump** | AD information dumper | `ldapdomaindump -u user -p pass` |
+| **kerbrute** | Kerberos pre-auth bruteforcing | `kerbrute userenum --dc 10.10.10.10` |
+
+#### Web Application Testing (3 tools)
+| Tool | Description | Usage Example |
+|------|-------------|---------------|
+| **arjun** | HTTP parameter discovery | `arjun -u https://example.com/api` |
+| **xsstrike** | Advanced XSS detection suite | `xsstrike -u "https://example.com?q=test"` |
+| **sublist3r** | Subdomain enumeration tool | `sublist3r -d example.com` |
+
+#### Libraries & APIs (8 tools)
+| Tool | Description | Purpose |
+|------|-------------|---------|
+| **requests** | HTTP library | Making HTTP requests |
+| **beautifulsoup4** | HTML/XML parser | Web scraping |
+| **selenium** | Browser automation | Dynamic content testing |
+| **playwright** | Browser automation framework | Modern web testing |
+| **pycryptodome** | Cryptographic library | Encryption/decryption |
+| **pyjwt** | JWT implementation | JWT token handling |
+| **shodan** | Shodan API client | Internet-wide scanning |
+| **censys** | Censys API client | Certificate/host search |
+
+---
+
+### Web Application Security (2 tools)
+
+| Tool | Description | Usage | License |
+|------|-------------|-------|---------|
+| **Burp Suite Community** | Web vulnerability scanner and proxy | Manual install required | Free |
+| **OWASP ZAP** | Web application security scanner | `zap.bat` or GUI | Free |
+
+---
+
+### Android Security Tools (7 tools)
+
+| Tool | Description | Usage Example | Location |
+|------|-------------|---------------|----------|
+| **ADB** | Android Debug Bridge | `adb devices` | `%USERPROFILE%\security-tools\platform-tools\` |
+| **Fastboot** | Android fastboot utility | `fastboot devices` | `%USERPROFILE%\security-tools\platform-tools\` |
+| **Android Studio** | Official Android IDE | Launch from Start Menu | `C:\Program Files\Android\Android Studio\` |
+| **JADX** | Dex to Java decompiler | `jadx app.apk -d output` | `%USERPROFILE%\security-tools\jadx\` |
+| **APKTool** | APK reverse engineering tool | `apktool d app.apk` | `%USERPROFILE%\security-tools\apktool\` |
+| **scrcpy** | Display and control Android devices | `scrcpy` | System PATH |
+| **MobSF** | Mobile Security Framework | `docker run -p 8000:8000 mobsf` | Docker |
+
+---
+
+### Reverse Engineering Tools (2 tools)
+
+| Tool | Description | Usage | Location |
+|------|-------------|-------|----------|
+| **Ghidra** | NSA reverse engineering framework | `ghidraRun.bat` | `%USERPROFILE%\security-tools\ghidra\` |
+| **IDA Free** | Binary code analyzer | Download from hex-rays.com | Manual download |
+
+---
+
+### Wordlists (2 collections)
+
+| Collection | Description | Size | Location |
+|------------|-------------|------|----------|
+| **SecLists** | Security testing wordlists | 40,000+ files | `%USERPROFILE%\security-tools\wordlists\SecLists\` |
+| **PayloadsAllTheThings** | Useful payloads and bypasses | 1,000+ files | `%USERPROFILE%\security-tools\wordlists\PayloadsAllTheThings\` |
+
+**SecLists Categories**:
+- Discovery (web content, DNS, infrastructure)
+- Passwords (common passwords, leaked databases)
+- Usernames (common usernames)
+- Fuzzing (injection payloads, XSS, SQLi)
+- Pattern Matching (regex patterns)
+- Miscellaneous (IOCs, malware, vulnerabilities)
+
+**PayloadsAllTheThings Categories**:
+- XSS Injection
+- SQL Injection
+- Command Injection
+- File Upload
+- XXE Injection
+- SSRF
+- Path Traversal
+- CSRF
+- Deserialization
+- SSTI
+
+---
+
+### System Dependencies (11 tools)
+
+| Tool | Description | Version | Usage |
+|------|-------------|---------|-------|
+| **Git** | Version control system | Latest | `git clone`, `git pull` |
+| **Python 3** | Programming language | 3.11+ | `python script.py` |
+| **Go** | Programming language | 1.21+ | `go install`, `go run` |
+| **Node.js** | JavaScript runtime | 20+ | `node script.js`, `npm install` |
+| **Visual Studio Code** | Code editor | Latest | Open from Start Menu |
+| **7-Zip** | File archiver | Latest | `7z x file.zip` |
+| **Docker Desktop** | Container platform | Latest | `docker run`, `docker pull` |
+| **VirtualBox** | Virtualization software | Latest | VM management |
+| **Wireshark** | Network protocol analyzer | Latest | Packet capture |
+| **Nmap** | Network scanner | Latest | `nmap target.com` |
+| **Windows Terminal** | Modern terminal | Latest | Enhanced PowerShell |
+
+---
 ## 💻 System Requirements
 
 | Requirement | Minimum | Recommended |
@@ -1773,185 +1951,7 @@ takeown /f "$env:USERPROFILE\security-tools" /r /d y
 icacls "$env:USERPROFILE\security-tools" /grant "$env:USERNAME:(OI)(CI)F" /t
 ```
 
----
 
-## 📚 Complete Tool List
-
-### Windows-Specific Tools (6 tools)
-
-| Tool | Description | Usage | Location |
-|------|-------------|-------|----------|
-| **Sysinternals Suite** | 70+ Windows system utilities | `procmon.exe`, `procexp.exe`, `autoruns.exe` | `C:\ProgramData\chocolatey\lib\sysinternals\tools\` |
-| **Process Hacker** | Advanced process monitoring tool | `ProcessHacker.exe` | `C:\Program Files\Process Hacker 2\` |
-| **x64dbg** | Open-source x64/x32 debugger | `x64dbg.exe` | `C:\Program Files\x64dbg\` |
-| **dnSpy** | .NET debugger and assembly editor | `dnSpy.exe` | `%USERPROFILE%\security-tools\dnspy\` |
-| **ILSpy** | .NET decompiler | `ILSpy.exe` | `C:\Program Files\ILSpy\` |
-| **Detect It Easy** | PE file analyzer and detector | `die.exe` | `%USERPROFILE%\security-tools\detect-it-easy\` |
-
----
-
-### Go Security Tools (24 tools)
-
-#### ProjectDiscovery Suite (8 tools)
-| Tool | Description | Usage Example |
-|------|-------------|---------------|
-| **nuclei** | Vulnerability scanner based on templates | `nuclei -u https://example.com` |
-| **subfinder** | Subdomain discovery tool | `subfinder -d example.com` |
-| **httpx** | HTTP toolkit for probing | `cat domains.txt \| httpx` |
-| **katana** | Next-generation web crawler | `katana -u https://example.com` |
-| **naabu** | Fast port scanner | `naabu -host example.com` |
-| **dnsx** | DNS toolkit | `dnsx -l domains.txt` |
-| **interactsh** | OOB interaction tool | `interactsh-client` |
-| **notify** | Multi-channel notification system | `nuclei ... \| notify` |
-
-#### Fuzzing Tools (2 tools)
-| Tool | Description | Usage Example |
-|------|-------------|---------------|
-| **ffuf** | Fast web fuzzer | `ffuf -u https://example.com/FUZZ -w wordlist.txt` |
-| **gobuster** | Directory/DNS/vhost brute-forcer | `gobuster dir -u https://example.com -w wordlist.txt` |
-
-#### Discovery Tools (6 tools)
-| Tool | Description | Usage Example |
-|------|-------------|---------------|
-| **amass** | In-depth subdomain enumeration | `amass enum -d example.com` |
-| **assetfinder** | Find domains and subdomains | `assetfinder example.com` |
-| **gau** | Fetch known URLs from multiple sources | `echo example.com \| gau` |
-| **waybackurls** | Fetch URLs from Wayback Machine | `echo example.com \| waybackurls` |
-| **hakrawler** | Simple, fast web crawler | `echo https://example.com \| hakrawler` |
-| **gospider** | Fast web spider | `gospider -s https://example.com` |
-
-#### Utility Tools (4 tools)
-| Tool | Description | Usage Example |
-|------|-------------|---------------|
-| **gf** | Wrapper for grep with security patterns | `cat urls.txt \| gf xss` |
-| **anew** | Add new lines to files (deduplicate) | `cat new.txt \| anew old.txt` |
-| **unfurl** | Pull out bits of URLs | `cat urls.txt \| unfurl domains` |
-| **qsreplace** | Replace query string values | `cat urls.txt \| qsreplace FUZZ` |
-
-#### Security Tools (4 tools)
-| Tool | Description | Usage Example |
-|------|-------------|---------------|
-| **dalfox** | XSS scanner and parameter analyzer | `dalfox url https://example.com?q=test` |
-| **kxss** | Find Reflected XSS parameters | `cat urls.txt \| kxss` |
-| **crlfuzz** | CRLF injection scanner | `crlfuzz -l urls.txt` |
-| **gitleaks** | Scan for secrets in git repos | `gitleaks detect --source .` |
-| **trufflehog** | Find credentials in code | `trufflehog git https://github.com/user/repo` |
-
----
-
-### Python Security Tools (19 tools)
-
-#### Windows/AD Pentesting (8 tools)
-| Tool | Description | Usage Example |
-|------|-------------|---------------|
-| **impacket** | Collection of Python classes for network protocols | `python -m impacket.psexec` |
-| **crackmapexec** | Swiss army knife for Windows/AD pentesting | `crackmapexec smb 192.168.1.0/24` |
-| **bloodhound** | AD attack path analysis | `bloodhound.py -u user -p pass -d domain.com` |
-| **mitm6** | IPv6 MITM attack tool | `mitm6 -d domain.com` |
-| **responder** | LLMNR/NBT-NS/MDNS poisoner | `responder -I eth0` |
-| **pywerview** | PowerView Python implementation | `pywerview -u user -p pass` |
-| **ldapdomaindump** | AD information dumper | `ldapdomaindump -u user -p pass` |
-| **kerbrute** | Kerberos pre-auth bruteforcing | `kerbrute userenum --dc 10.10.10.10` |
-
-#### Web Application Testing (3 tools)
-| Tool | Description | Usage Example |
-|------|-------------|---------------|
-| **arjun** | HTTP parameter discovery | `arjun -u https://example.com/api` |
-| **xsstrike** | Advanced XSS detection suite | `xsstrike -u "https://example.com?q=test"` |
-| **sublist3r** | Subdomain enumeration tool | `sublist3r -d example.com` |
-
-#### Libraries & APIs (8 tools)
-| Tool | Description | Purpose |
-|------|-------------|---------|
-| **requests** | HTTP library | Making HTTP requests |
-| **beautifulsoup4** | HTML/XML parser | Web scraping |
-| **selenium** | Browser automation | Dynamic content testing |
-| **playwright** | Browser automation framework | Modern web testing |
-| **pycryptodome** | Cryptographic library | Encryption/decryption |
-| **pyjwt** | JWT implementation | JWT token handling |
-| **shodan** | Shodan API client | Internet-wide scanning |
-| **censys** | Censys API client | Certificate/host search |
-
----
-
-### Web Application Security (2 tools)
-
-| Tool | Description | Usage | License |
-|------|-------------|-------|---------|
-| **Burp Suite Community** | Web vulnerability scanner and proxy | Manual install required | Free |
-| **OWASP ZAP** | Web application security scanner | `zap.bat` or GUI | Free |
-
----
-
-### Android Security Tools (7 tools)
-
-| Tool | Description | Usage Example | Location |
-|------|-------------|---------------|----------|
-| **ADB** | Android Debug Bridge | `adb devices` | `%USERPROFILE%\security-tools\platform-tools\` |
-| **Fastboot** | Android fastboot utility | `fastboot devices` | `%USERPROFILE%\security-tools\platform-tools\` |
-| **Android Studio** | Official Android IDE | Launch from Start Menu | `C:\Program Files\Android\Android Studio\` |
-| **JADX** | Dex to Java decompiler | `jadx app.apk -d output` | `%USERPROFILE%\security-tools\jadx\` |
-| **APKTool** | APK reverse engineering tool | `apktool d app.apk` | `%USERPROFILE%\security-tools\apktool\` |
-| **scrcpy** | Display and control Android devices | `scrcpy` | System PATH |
-| **MobSF** | Mobile Security Framework | `docker run -p 8000:8000 mobsf` | Docker |
-
----
-
-### Reverse Engineering Tools (2 tools)
-
-| Tool | Description | Usage | Location |
-|------|-------------|-------|----------|
-| **Ghidra** | NSA reverse engineering framework | `ghidraRun.bat` | `%USERPROFILE%\security-tools\ghidra\` |
-| **IDA Free** | Binary code analyzer | Download from hex-rays.com | Manual download |
-
----
-
-### Wordlists (2 collections)
-
-| Collection | Description | Size | Location |
-|------------|-------------|------|----------|
-| **SecLists** | Security testing wordlists | 40,000+ files | `%USERPROFILE%\security-tools\wordlists\SecLists\` |
-| **PayloadsAllTheThings** | Useful payloads and bypasses | 1,000+ files | `%USERPROFILE%\security-tools\wordlists\PayloadsAllTheThings\` |
-
-**SecLists Categories**:
-- Discovery (web content, DNS, infrastructure)
-- Passwords (common passwords, leaked databases)
-- Usernames (common usernames)
-- Fuzzing (injection payloads, XSS, SQLi)
-- Pattern Matching (regex patterns)
-- Miscellaneous (IOCs, malware, vulnerabilities)
-
-**PayloadsAllTheThings Categories**:
-- XSS Injection
-- SQL Injection
-- Command Injection
-- File Upload
-- XXE Injection
-- SSRF
-- Path Traversal
-- CSRF
-- Deserialization
-- SSTI
-
----
-
-### System Dependencies (11 tools)
-
-| Tool | Description | Version | Usage |
-|------|-------------|---------|-------|
-| **Git** | Version control system | Latest | `git clone`, `git pull` |
-| **Python 3** | Programming language | 3.11+ | `python script.py` |
-| **Go** | Programming language | 1.21+ | `go install`, `go run` |
-| **Node.js** | JavaScript runtime | 20+ | `node script.js`, `npm install` |
-| **Visual Studio Code** | Code editor | Latest | Open from Start Menu |
-| **7-Zip** | File archiver | Latest | `7z x file.zip` |
-| **Docker Desktop** | Container platform | Latest | `docker run`, `docker pull` |
-| **VirtualBox** | Virtualization software | Latest | VM management |
-| **Wireshark** | Network protocol analyzer | Latest | Packet capture |
-| **Nmap** | Network scanner | Latest | `nmap target.com` |
-| **Windows Terminal** | Modern terminal | Latest | Enhanced PowerShell |
-
----
 
 ## 🔄 Updating Tools
 
