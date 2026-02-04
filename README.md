@@ -93,7 +93,7 @@ Complete these steps before running the installation script:
 ### Method 1: Standard Installation (Recommended)
 
 #### Step 1: Download the Script
-Save `Install-WindowsSecurityTools.ps1` to your Downloads folder.
+Save `ArcReactor.ps1` to your Downloads folder.
 
 #### Step 2: Open PowerShell as Administrator
 1. Press `Windows + X` on your keyboard
@@ -114,7 +114,7 @@ Set-ExecutionPolicy Bypass -Scope Process -Force
 
 #### Step 5: Run the Installation Script
 ```powershell
-.\Install-WindowsSecurityTools.ps1
+.\ArcReactor.ps1
 ```
 
 #### Step 6: Monitor Installation
@@ -130,7 +130,7 @@ Set-ExecutionPolicy Bypass -Scope Process -Force
 After downloading the script to Downloads folder:
 
 ```powershell
-cd $env:USERPROFILE\Downloads; Set-ExecutionPolicy Bypass -Scope Process -Force; .\Install-WindowsSecurityTools.ps1
+cd $env:USERPROFILE\Downloads; Set-ExecutionPolicy Bypass -Scope Process -Force; .\ArcReactor.ps1
 ```
 
 ---
@@ -143,12 +143,12 @@ If the script is in a different location:
 # Example: Script on Desktop
 cd $env:USERPROFILE\Desktop
 Set-ExecutionPolicy Bypass -Scope Process -Force
-.\Install-WindowsSecurityTools.ps1
+.\ArcReactor.ps1
 
 # Example: Script on D: drive
 cd D:\Scripts
 Set-ExecutionPolicy Bypass -Scope Process -Force
-.\Install-WindowsSecurityTools.ps1
+.\ArcReactor.ps1
 ```
 
 ---
@@ -1285,7 +1285,7 @@ cat urls.txt | qsreplace "FUZZ"
 
 **Error Message**:
 ```
-.\Install-WindowsSecurityTools.ps1 : File cannot be loaded because running scripts is disabled on this system.
+.\ArcReactor.ps1 : File cannot be loaded because running scripts is disabled on this system.
 ```
 
 **Solution**:
@@ -1294,13 +1294,13 @@ cat urls.txt | qsreplace "FUZZ"
 Set-ExecutionPolicy Bypass -Scope Process -Force
 
 # Then run the script again
-.\Install-WindowsSecurityTools.ps1
+.\ArcReactor.ps1
 ```
 
 **Alternative Solution** (if above doesn't work):
 ```powershell
 # Run script with bypass flag
-powershell.exe -ExecutionPolicy Bypass -File .\Install-WindowsSecurityTools.ps1
+powershell.exe -ExecutionPolicy Bypass -File .\ArcReactor.ps1
 ```
 
 ---
@@ -1325,7 +1325,7 @@ iex ((New-Object System.Net.WebClient).DownloadString('https://community.chocola
 choco --version
 
 # Step 4: Re-run main script
-.\Install-WindowsSecurityTools.ps1
+.\ArcReactor.ps1
 ```
 
 **Alternative - Check Prerequisites**:
@@ -1630,7 +1630,7 @@ choco install package-name -y
 ```powershell
 # Re-run the script
 # It will skip already-installed tools
-.\Install-WindowsSecurityTools.ps1
+.\ArcReactor.ps1
 ```
 
 ---
