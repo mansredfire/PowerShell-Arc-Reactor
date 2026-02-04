@@ -1,4 +1,6 @@
 
+<div align="center">
+````
 ╔═══════════════════════════════════════════════════════════════════╗
 ║                                                                   ║
 ║                    ⚡ ARC REACTOR ⚡                              ║
@@ -7,7 +9,7 @@
 ║        Automated Installation of 25+ Security Tools              ║
 ║                                                                   ║
 ╚═══════════════════════════════════════════════════════════════════╝
-
+````
 
 [![PowerShell](https://img.shields.io/badge/PowerShell-5.1+-blue.svg)](https://github.com/PowerShell/PowerShell)
 [![Platform](https://img.shields.io/badge/Platform-Windows%2010%2F11-lightgrey.svg)](https://www.microsoft.com/windows)
