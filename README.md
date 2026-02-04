@@ -3079,8 +3079,6 @@ You now have a comprehensive Windows security testing toolkit installed and read
 Remember: With great tools comes great responsibility. Always get permission before testing!
 
 ---
-
-**Version**: 1.0.0  
 **Last Updated**: 2024  
 **Maintained By**: Security Tools Community
 
