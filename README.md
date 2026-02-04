@@ -1,21 +1,3 @@
-# ArcReactor.ps1 - Windows Security Tools Automated Installer
-
-<div align="center">
-
-```
-╔═══════════════════════════════════════════════════════════════════╗
-║                                                                   ║
-║                    ⚡ ARC REACTOR ⚡                              ║
-║              Windows Security Tools Installer                     ║
-║                                                                   ║
-║        Automated Installation of 25+ Security Tools              ║
-║                                                                   ║
-╚═══════════════════════════════════════════════════════════════════╝
-```
-
-[![PowerShell](https://img.shields.io/badge/PowerShell-5.1+-blue.svg)](https://github.com/PowerShell/PowerShell)
-[![Platform](https://img.shields.io/badge/Platform-Windows%2010%2F11-lightgrey.svg)](https://www.microsoft.com/windows)
-[![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 
 **One script to rule them all** - Automated installation of essential security and bug bounty tools for Windows.
 
