@@ -1,6 +1,8 @@
+# ArcReactor.ps1 - Windows Security Tools Automated Installer
 
 <div align="center">
-````
+
+```
 ╔═══════════════════════════════════════════════════════════════════╗
 ║                                                                   ║
 ║                    ⚡ ARC REACTOR ⚡                              ║
@@ -9,7 +11,7 @@
 ║        Automated Installation of 25+ Security Tools              ║
 ║                                                                   ║
 ╚═══════════════════════════════════════════════════════════════════╝
-````
+```
 
 [![PowerShell](https://img.shields.io/badge/PowerShell-5.1+-blue.svg)](https://github.com/PowerShell/PowerShell)
 [![Platform](https://img.shields.io/badge/Platform-Windows%2010%2F11-lightgrey.svg)](https://www.microsoft.com/windows)
@@ -18,6 +20,8 @@
 **One script to rule them all** - Automated installation of essential security and bug bounty tools for Windows.
 
 [Installation](#-installation-instructions) • [Tools](#-complete-tool-list) • [Usage](#-tool-usage-examples) • [Troubleshooting](#-troubleshooting)
+
+</div>
 
 ---
 
@@ -69,7 +73,7 @@
 - **VPN**: Disable during installation (can cause timeouts)
 - **Time**: Allow 40-70 minutes for complete installation
 
-
+---
 ## 📚 Complete Tool List
 
 ### System Dependencies (12)
@@ -136,19 +140,6 @@
 **Total Tools: 25+ security tools**
 
 ---
-
-## 📖 Additional Resources
-
-### Official Documentation
-- **Nuclei**: https://docs.projectdiscovery.io/nuclei/
-- **Subfinder**: https://docs.projectdiscovery.io/tools/subfinder/
-- **Burp Suite**: https://portswigger.net/burp/documentation
-- **Frida**: https://frida.re/docs/home/
-- **JADX**: https://github.com/skylot/jadx
-
-### Learning Platforms
----
-
 ## ✅ Pre-Installation Checklist
 
 ### 1. System Preparation
@@ -929,6 +920,17 @@ When you find vulnerabilities:
 ---
 
 
+
+## 📖 Additional Resources
+
+### Official Documentation
+- **Nuclei**: https://docs.projectdiscovery.io/nuclei/
+- **Subfinder**: https://docs.projectdiscovery.io/tools/subfinder/
+- **Burp Suite**: https://portswigger.net/burp/documentation
+- **Frida**: https://frida.re/docs/home/
+- **JADX**: https://github.com/skylot/jadx
+
+### Learning Platforms
 - **HackTheBox**: https://www.hackthebox.com
 - **TryHackMe**: https://tryhackme.com
 - **PortSwigger Web Security Academy**: https://portswigger.net/web-security
@@ -984,6 +986,13 @@ This tool collection is intended for:
 
 ---
 
+## 📞 Support
+
+- **Issues**: [GitHub Issues](https://github.com/yourusername/arireactor/issues)
+- **Discussions**: [GitHub Discussions](https://github.com/yourusername/arireactor/discussions)
+
+---
+
 ## 🌟 Acknowledgments
 
 - ProjectDiscovery team for excellent Go security tools
@@ -993,6 +1002,8 @@ This tool collection is intended for:
 - Daniel Miessler for SecLists
 
 ---
+
+<div align="center">
 
 **Made with ⚡ by Security Researchers, for Security Researchers**
 
