@@ -7,8 +7,22 @@
                               ║                                                                   ║
                               ╚═══════════════════════════════════════════════════════════════════╝
 
+📋 Table of Contents
 
-[Installation](#-installation-instructions) • [Tools](#-complete-tool-list) • [Usage](#-tool-usage-examples) • [Troubleshooting](#-troubleshooting)
+Overview
+System Requirements
+Pre-Installation Checklist
+Installation Instructions
+What Gets Installed
+Installation Locations
+Post-Installation Steps
+Tool Usage Examples
+Troubleshooting
+Complete Tool List
+Updating Tools
+Uninstallation
+Security Considerations
+FAQ
 
 </div>
 
