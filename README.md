@@ -3084,10 +3084,4 @@ Remember: With great tools comes great responsibility. Always get permission bef
 **Last Updated**: 2024  
 **Maintained By**: Security Tools Community
 
----
-
-*This README is for the Windows PowerShell installation script. For Linux installation, see the Linux README.*
-```
-
-**Q: Installation hangs at specific tool?**
 A: Check log file for errors
