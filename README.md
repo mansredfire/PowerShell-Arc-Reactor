@@ -69,6 +69,84 @@
 - **VPN**: Disable during installation (can cause timeouts)
 - **Time**: Allow 40-70 minutes for complete installation
 
+
+## 📚 Complete Tool List
+
+### System Dependencies (12)
+| Tool | Description | Use Case |
+|------|-------------|----------|
+| Git | Version control | Clone repositories |
+| Python 3 | Programming language | Python scripts |
+| Go | Programming language | Go-based tools |
+| Node.js | JavaScript runtime | Node-based tools |
+| 7-Zip | Archive utility | Extract compressed files |
+| wget/curl | Download utilities | Fetch files |
+| Nmap | Network scanner | Port scanning |
+| Wireshark | Packet analyzer | Network analysis |
+| Docker Desktop | Container platform | Run containerized tools |
+| OpenJDK | Java runtime | Java-based tools |
+| Chocolatey | Package manager | Windows package management |
+
+### Go Security Tools (9)
+| Tool | Description | GitHub Stars | Primary Use |
+|------|-------------|--------------|-------------|
+| Nuclei | Vulnerability scanner | 17k+ | Automated vuln detection |
+| Subfinder | Subdomain discovery | 8k+ | Passive subdomain enum |
+| Httpx | HTTP toolkit | 6k+ | Probing live hosts |
+| Katana | Web crawler | 7k+ | Modern web crawling |
+| Naabu | Port scanner | 4k+ | Fast port scanning |
+| Dnsx | DNS toolkit | 1k+ | DNS queries/validation |
+| Notify | Notifications | 1k+ | Multi-channel alerts |
+| Ffuf | Web fuzzer | 11k+ | Directory/param fuzzing |
+| Gobuster | Brute-forcer | 9k+ | Directory/DNS enum |
+
+### Python Security Tools (7)
+| Tool | Description | Use Case |
+|------|-------------|----------|
+| requests | HTTP library | HTTP requests |
+| beautifulsoup4 | HTML parser | Web scraping |
+| dnspython | DNS toolkit | DNS operations |
+| censys | Censys API | Certificate/host search |
+| shodan | Shodan API | Internet-wide scanning |
+| securitytrails | SecurityTrails API | DNS intelligence |
+| frida-tools | Dynamic instrumentation | Runtime app analysis |
+
+### Web Application Security (2)
+| Tool | Description | License |
+|------|-------------|---------|
+| Burp Suite Community | Web proxy/scanner | Free |
+| OWASP ZAP | Automated web scanner | Free |
+
+### Android Security Tools (7)
+| Tool | Description | Use Case |
+|------|-------------|----------|
+| ADB | Android Debug Bridge | Device communication |
+| Fastboot | Android flashing | Device flashing |
+| Android Studio | Official IDE | Android development |
+| JADX | APK decompiler | Dex to Java |
+| APKTool | APK reverse engineering | Decompile/rebuild APKs |
+| Frida | Dynamic instrumentation | Runtime hooking |
+| MobSF | Mobile security framework | Comprehensive app analysis |
+
+### Wordlists (1)
+| Collection | Files | Size | Categories |
+|------------|-------|------|------------|
+| SecLists | 40,000+ | ~1GB | Discovery, Passwords, Fuzzing, Payloads |
+
+**Total Tools: 25+ security tools**
+
+---
+
+## 📖 Additional Resources
+
+### Official Documentation
+- **Nuclei**: https://docs.projectdiscovery.io/nuclei/
+- **Subfinder**: https://docs.projectdiscovery.io/tools/subfinder/
+- **Burp Suite**: https://portswigger.net/burp/documentation
+- **Frida**: https://frida.re/docs/home/
+- **JADX**: https://github.com/skylot/jadx
+
+### Learning Platforms
 ---
 
 ## ✅ Pre-Installation Checklist
