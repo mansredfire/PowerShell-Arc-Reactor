@@ -1,4 +1,4 @@
-                              ╔═══════════════════════════════════════════════════════════════════╗
+╔═══════════════════════════════════════════════════════════════════╗
                               ║                                                                   ║
                               ║                     ⚡ WINDOWS ARC REACTOR ⚡                    ║
                               ║       Modern Tools to Complement Your Windows Distribution        ║
@@ -38,6 +38,7 @@
 - 🚀 **One-Click Installation**: Install 25+ tools with a single command
 - 🔧 **Automatic Configuration**: Sets up PATH, downloads dependencies, configures tools
 - 📦 **Package Management**: Uses Chocolatey for system packages
+- ⏭️ **Smart Skip Detection**: Automatically detects already-installed tools and skips them — safe to re-run at any time without reinstalling or duplicating anything
 - 🎯 **Curated Tool List**: Only essential, proven security tools
 - 📝 **Comprehensive Logging**: Track installation progress and errors
 - 🔄 **Update Support**: Easy tool updates via helper scripts
@@ -75,12 +76,13 @@
 - **Admin Rights Required**: Must run as Administrator
 - **Antivirus**: Temporarily disable or add exclusions for security tools
 - **VPN**: Disable during installation (can cause timeouts)
-- **Time**: Allow 40-70 minutes for complete installation
+- **Time**: Allow 40-70 minutes for first-time installation
+- **Re-runs**: Script detects already-installed tools and skips them, so re-runs are fast
 
 ---
 ## 📚 Complete Tool List
 
-### System Dependencies (12)
+### System Dependencies (11)
 | Tool | Description | Use Case |
 |------|-------------|----------|
 | Git | Version control | Clone repositories |
@@ -91,7 +93,6 @@
 | wget/curl | Download utilities | Fetch files |
 | Nmap | Network scanner | Port scanning |
 | Wireshark | Packet analyzer | Network analysis |
-| Docker Desktop | Container platform | Run containerized tools |
 | OpenJDK | Java runtime | Java-based tools |
 | Chocolatey | Package manager | Windows package management |
 
@@ -217,7 +218,8 @@ Set-ExecutionPolicy Bypass -Scope Process -Force
 #### Step 6: Monitor Installation
 
 - Watch colored output for progress
-- Installation takes 40-70 minutes
+- First-time installation takes 40-70 minutes
+- Already-installed tools are automatically detected and skipped
 - **Do NOT close PowerShell** during installation
 - Script shows summary at the end
 
@@ -249,7 +251,9 @@ Set-ExecutionPolicy Bypass -Scope Process -Force
 
 ## 📦 What Gets Installed
 
-### Installation Timeline
+### Installation Timeline (First Run)
+
+> **Note:** On subsequent runs, the script automatically skips already-installed tools. Re-runs typically complete in under 5 minutes.
 
 ```
 Phase 1: Chocolatey Package Manager      [▓▓░░░░░░░░] 2-3 min
@@ -278,7 +282,6 @@ Phase 8: Configuration & Updates         [▓░░░░░░░░░] 1-2 mi
 - ✅ wget, curl (download utilities)
 - ✅ Nmap (network scanner)
 - ✅ Wireshark (packet analyzer)
-- ✅ Docker Desktop (container platform)
 - ✅ OpenJDK (Java runtime)
 
 #### Phase 3: Python Security Tools (3-5 min)
@@ -485,9 +488,14 @@ adb shell "/data/local/tmp/frida-server &"
 frida-ps -U
 ```
 
-### Step 6: Start Docker Desktop
+### Step 6: Start Docker Desktop (Optional - Manual Install)
 
-For MobSF (Mobile Security Framework):
+Docker Desktop is **not** installed automatically by ArcReactor. If you need MobSF (Mobile Security Framework), install Docker Desktop manually first:
+
+1. Download from https://www.docker.com/products/docker-desktop/
+2. Install and restart your computer
+
+Then run MobSF:
 ```powershell
 # Start Docker Desktop from Start Menu
 
@@ -689,21 +697,7 @@ frida --version
 adb shell "/data/local/tmp/frida-server --version"
 ```
 
-### Issue 6: Docker Desktop Won't Start
-
-**Solution**:
-```powershell
-# Enable WSL2
-wsl --install
-
-# Enable Hyper-V
-Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Hyper-V -All
-
-# Restart computer
-shutdown /r /t 0
-```
-
-### Issue 7: Antivirus Blocking Tools
+### Issue 6: Antivirus Blocking Tools
 
 **Solution**:
 
@@ -714,7 +708,7 @@ Add-MpPreference -ExclusionPath "$env:USERPROFILE\go\bin"
 Add-MpPreference -ExclusionPath "C:\ProgramData\chocolatey"
 ```
 
-### Issue 8: Installation Hanging
+### Issue 7: Installation Hanging
 
 **Solution**:
 - Check internet connection
@@ -793,7 +787,7 @@ Remove-Item -Recurse -Force "$env:USERPROFILE\go"
 Remove-Item -Recurse -Force "$env:USERPROFILE\bug-bounty"
 
 # Uninstall Chocolatey packages
-choco uninstall git python golang nodejs nmap wireshark docker-desktop -y
+choco uninstall git python golang nodejs nmap wireshark -y
 ```
 
 ### Complete Uninstall Script
@@ -820,7 +814,7 @@ Remove-Item -Recurse -Force "$env:USERPROFILE\bug-bounty" -ErrorAction SilentlyC
 
 # Uninstall Chocolatey packages
 Write-Host "[2/5] Uninstalling Chocolatey packages..." -ForegroundColor Cyan
-choco uninstall git python golang nodejs nmap wireshark docker-desktop zap androidstudio -y
+choco uninstall git python golang nodejs nmap wireshark zap androidstudio -y
 
 # Remove Docker images
 Write-Host "[3/5] Removing Docker images..." -ForegroundColor Cyan
